@@ -32,4 +32,24 @@ public class BankAccount {
 	public void setAccountHolder(AccountHolder accountHolder) {
 		this.accountHolder = accountHolder;
 	}
+	
+	public int deposit(double amount) {
+		if (amount <= 0) {
+			return 0;
+		} else {
+			balance = balance + amount;
+			return 1;
+		}
+	}
+
+	public int withdraw(double amount) {
+		if (amount > balance) {
+			return 0;
+		} else if (amount <= 0) {
+			return 1;
+		} else {
+			balance = balance - amount;	
+			return 2;
+		}
+	}
 }
